@@ -1,0 +1,4 @@
+include:
+  - project: "kisspeeker/shared-ci"
+    ref: master
+    file: /presets/app.yml

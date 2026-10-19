@@ -1,0 +1,12 @@
+http://${DNS_ZONE}, http://www.${DNS_ZONE} {
+    respond /health/live 200
+
+    handle /health/ready {
+        rewrite * /
+        reverse_proxy mysite:80
+    }
+
+    handle {
+        reverse_proxy mysite:80
+    }
+}

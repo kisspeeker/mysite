@@ -1,22 +1,8 @@
-FROM node:14-alpine
+FROM busybox:1.37.0-musl
 
-# Установка Yarn внутри контейнера
-RUN apk update && apk add yarn
+COPY index.html terminal.css styles.css /www/
+COPY static/ /www/static/
 
-RUN mkdir -p /var/www/dockerize-nuxt/nuxt-app
-WORKDIR /var/www/dockerize-nuxt/nuxt-app
+RUN chmod -R a+rX /www
 
-COPY package*.json ./
-
-RUN yarn install
-
-COPY . .
-
-RUN yarn build
-
-EXPOSE 3000
-
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
-
-CMD [ "yarn", "start" ]
+CMD ["httpd", "-f", "-p", "80", "-h", "/www"]

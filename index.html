@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aleksandr Shiriakov — frontend developer in Tbilisi, Georgia.">
+    <title>Aleksandr Shiriakov | Frontend Developer</title>
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/terminal.css">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="terminal">
+    <main class="container">
+      <header class="header">
+        <div class="header-logo logo terminal-prompt"><a href="/" class="link">Aleksandr Shiriakov</a></div>
+        <div class="header-description"><span class="header-description-value">Tbilisi, Georgia / Relocate</span></div>
+      </header>
+
+      <div class="terminal-main">
+      <section class="section terminal-section--base">
+        <h2>Frontend Developer [<span id="experience"></span>]</h2>
+        <div class="terminal-main-description">
+        <p>👱‍♂️ Privet!</p>
+        <p>Frontend developer working with Vue, TypeScript and JavaScript.</p>
+        <p>Language: English (B1), Russian (Native)</p>
+        <p>
+          Lovely making user-friendly Apps. Currently learning Infosec and DevOps. Creating cozy interfaces and server architectures. Playing football and CS2, riding a bike and love coffee
+        </p>
+        </div>
+      </section>
+
+      <section class="section terminal-section--socials">
+        <h2>Social links</h2>
+        <ul>
+          <li><a href="https://github.com/kisspeeker" rel="me noreferrer">GitHub</a></li>
+          <li><a href="https://t.me/kisspeeker" rel="me noreferrer">Telegram</a></li>
+          <li><a href="https://facebook.com/kisspeeker" rel="me noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com/kisspeeker" rel="me noreferrer">Instagram</a></li>
+        </ul>
+      </section>
+
+      <section class="section terminal-section--projects">
+        <h2>Personal project</h2>
+        <div class="terminal-timeline">
+          <a class="terminal-card" href="https://github.com/kisspeeker/platform-core" rel="noreferrer">
+            <header>Platform core (2026)</header>
+            <div>Platform core architecture for deploys possibly and faster</div>
+          </a>
+          <a class="terminal-card" href="https://t.me/info_midpass_bot" rel="noreferrer">
+            <header>Midpass Telegram Bot (2023)</header>
+            <div>Telegram Bot with 900+ users for a getting automatically passport status based on cron checker</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section terminal-section--skills">
+        <h2>Skills</h2>
+        <ul class="terminal-main-skills-list">
+          <li class="terminal-main-skills-list-item">Vue</li><li class="terminal-main-skills-list-item">TypeScript</li><li class="terminal-main-skills-list-item">JavaScript</li><li class="terminal-main-skills-list-item">Pinia</li>
+          <li class="terminal-main-skills-list-item">Nuxt (SSR SPA)</li><li class="terminal-main-skills-list-item">Svelte</li><li class="terminal-main-skills-list-item">HTMX</li><li class="terminal-main-skills-list-item">jQuery</li>
+          <li class="terminal-main-skills-list-item">Docker</li><li class="terminal-main-skills-list-item">Nodejs</li><li class="terminal-main-skills-list-item">Fastify</li><li class="terminal-main-skills-list-item">Nestjs</li>
+          <li class="terminal-main-skills-list-item">Canvas 2D</li><li class="terminal-main-skills-list-item">Responsive design</li>
+        </ul>
+      </section>
+      </div>
+    </main>
+
+    <script>
+      const calcExperience = () => {
+        const nowDate = new Date();
+        const startDate = new Date('2017-11-01T00:00:00Z');
+        let years = nowDate.getUTCFullYear() - startDate.getUTCFullYear();
+        let months = nowDate.getUTCMonth() - startDate.getUTCMonth();
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        return months ? `${years} years ${months} months` : `${years} years`;
+      };
+
+      document.querySelector('#experience').textContent = calcExperience();
+    </script>
+  </body>
+</html>
